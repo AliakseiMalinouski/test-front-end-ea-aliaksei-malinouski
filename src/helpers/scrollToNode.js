@@ -1,0 +1,1 @@
+export const scrollToNode = (node) => node.scrollIntoView({ behavior: 'smooth' });

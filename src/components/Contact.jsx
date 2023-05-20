@@ -4,8 +4,16 @@ import { useState } from "react";
 import { Snack } from "./Snack";
 import { validationField } from "../helpers/validtionField";
 import { ErrorHint } from "./ErrorHint";
+import { updateAnchorState } from "../Redux/anchorSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+import { contactVariant } from "../Motion Variants/variant";
 
 export const Contact = React.memo(() => {
+
+    let dispatch = useDispatch();
+
+    const anchorState = useSelector(state => state.anchor.anchorState);
 
     const [inputState, setInputState] = useState("");
     const [snackState, setSnackState] = useState(false);
@@ -48,10 +56,20 @@ export const Contact = React.memo(() => {
             .catch(error => alert('Something went wrong...Try again'))
         }
     }
+
+    console.log(anchorState)
+
+    const goToAllEvents = () => {
+        dispatch(updateAnchorState());
+    }
     
     return (
-        <>
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+        <motion.div className="ContactWrapper" variants={contactVariant} initial={'hidden'} animate={'visible'}>
+        <div style={{display: 'flex', justifyContent: 'center', height: '100%', alignItems: 'center', position: 'relative'}}>
+            <p className={styles.Anchor} onClick={goToAllEvents}>
+                <span>Other Events</span>
+                <img src="https://i.ibb.co/QDYTNjM/fi-arrow-down.png" alt="Down arrow"/>
+            </p>
             <form action="#" className={styles.Form}>
                 <input type="text" placeholder="Enter your Email and get notified"
                 className={styles.Input}
@@ -73,6 +91,6 @@ export const Contact = React.memo(() => {
             }
             </div>
         <Snack isOpen={snackState} onClose={() => setSnackState(false)} email={sendData.value && sendData.value}/>
-        </>
+        </motion.div>
     )
 })

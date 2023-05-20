@@ -1,0 +1,18 @@
+.Events {
+    padding-top: 100px;
+}
+
+.EventsTitle {
+    line-height: 74.88px;
+    font-size: 72px;
+    color: #162C4E;
+    opacity: 39%;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.EventsContent {
+    width: 1708px;
+    height: 682px;
+}

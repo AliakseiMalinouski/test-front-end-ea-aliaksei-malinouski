@@ -16,20 +16,7 @@ function App() {
           <CornerVector type="left" left="https://i.ibb.co/Hq5T8pC/Vector.png"/>
           <CornerVector type="right" right="https://i.ibb.co/pQtN4Ty/Vector-1.png"/>
           <div className='Content'>
-            <div className='Container'>
               <PageRouter/>
-            </div>
-          </div>
-          <div className='Contact'>
-            <div className='ContactWrapper'>
-              <div className='Container'>
-                <Contact/>
-              </div>
-            </div>
-          </div>
-          <div className='Footer'>
-            <div className='Container'>
-            </div>
           </div>
         </div>
       </Provider>

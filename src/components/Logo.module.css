@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding-bottom: 92px;
+    cursor: pointer;
 }
 .Logo p {
     display: flex;
