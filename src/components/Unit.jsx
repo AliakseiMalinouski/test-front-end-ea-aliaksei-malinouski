@@ -1,10 +1,11 @@
 import React from "react";
-import styles from './Time.module.css';
+import styles from './Unit.module.css';
 
-export const Unit = React.memo(({title, rest}) => {
+export const Unit = React.memo(({rest, image}) => {
     return (
         <div className={styles.Unit}>
             {rest}
+            <img src={image} alt="Unit"/>
         </div>
     )
 })

@@ -1,0 +1,18 @@
+.ErrorHint {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.Example {
+    color: white;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.Invalid {
+    color: yellow;
+}

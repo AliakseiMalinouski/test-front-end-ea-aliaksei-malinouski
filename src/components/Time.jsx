@@ -3,7 +3,9 @@ import { mathTime } from "../helpers/mathTime";
 import { useState } from "react";
 import styles from './Time.module.css';
 import { Unit } from "./Unit";
-import { transformToObject } from "../helpers/transformToObject";
+import { transformToArray } from "../helpers/transformToArray";
+import { motion } from "framer-motion";
+import { timeVariant } from "../Motion Variants/variant";
 
 export const Time = React.memo(() => {
 
@@ -14,18 +16,16 @@ export const Time = React.memo(() => {
     useEffect(() => {
         setTimeout(() => {
             let updatedTime = mathTime();
-            let transformedObjectWithTime = transformToObject(updatedTime);
+            let transformedObjectWithTime = transformToArray(updatedTime);
             setCurrentTime(transformedObjectWithTime);
         }, 1000);
     }, [currentTime]);
    
-    let timeMemoizeed = useMemo(() => currentTime && currentTime?.map((elem, index) => <Unit key={elem.id} title={elem.title} rest={elem.rest}/>), [currentTime])
+    let timeMemoizeed = useMemo(() => currentTime && currentTime?.map((elem, index) => <Unit key={elem.id} title={elem.title} rest={elem.rest} image={elem.image}/>), [currentTime])
 
     return (
-        <div className={styles.Time}>
-            {
-                timeMemoizeed
-            }
-        </div>
+        <motion.div className={styles.Time} variants={timeVariant} initial={'hidden'} animate={'visible'}>
+            {timeMemoizeed}
+        </motion.div>
     )
 })

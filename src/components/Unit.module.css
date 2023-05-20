@@ -1,0 +1,10 @@
+.Unit {
+    height: 131px;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+    color: #162C4E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

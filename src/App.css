@@ -5,14 +5,13 @@
 }
 
 
-html {
+html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
 }
 
 body {
-    min-width: 100%;
-    min-height: 100%;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
@@ -41,4 +40,32 @@ li {
 .Container {
     margin: 0 auto;
     width: 1705px;
+}
+
+.Divider {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Contact {
+    width: 100%;
+    height: 192px;
+    margin-top: 192px;
+}
+
+.Contact .ContactWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #162C4E;
+}
+
+
+.Contact .ContactWrapper .Container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -5,9 +5,10 @@ import {Provider} from 'react-redux';
 import { store } from './Redux/store';
 import { PageRouter } from './Router/PageRouter';
 import { CornerVector } from './components/CornerVector';
-
+import { Contact } from './components/Contact';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Provider store={store}>
@@ -19,9 +20,15 @@ function App() {
               <PageRouter/>
             </div>
           </div>
+          <div className='Contact'>
+            <div className='ContactWrapper'>
+              <div className='Container'>
+                <Contact/>
+              </div>
+            </div>
+          </div>
           <div className='Footer'>
             <div className='Container'>
-
             </div>
           </div>
         </div>

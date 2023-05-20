@@ -1,0 +1,26 @@
+.LinkWrapper {
+    width: 240px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #1D4169;
+    cursor: pointer;
+    padding: 16px 41px 17px 28px;
+    position: relative;
+    margin-top: 12px;
+}
+
+
+.Link {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: white;
+}
+
+.Link img {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

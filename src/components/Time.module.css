@@ -1,16 +1,8 @@
 .Time {
-    width: 457px;
+    width: 567px;
     height: 131px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 32px;
-}
-
-.Unit {
-    height: 131px;
-    font-size: 72px;
-    font-weight: 600;
-    line-height: 72px;
-    color: #162C4E;
 }
