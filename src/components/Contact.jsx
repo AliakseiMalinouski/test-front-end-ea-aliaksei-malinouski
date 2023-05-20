@@ -5,15 +5,17 @@ import { Snack } from "./Snack";
 import { validationField } from "../helpers/validtionField";
 import { ErrorHint } from "./ErrorHint";
 import { updateAnchorState } from "../Redux/anchorSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { contactVariant } from "../Motion Variants/variant";
+import { updateStateCustomSnack } from "../Redux/customSnackSlice";
 
 export const Contact = React.memo(() => {
 
     let dispatch = useDispatch();
 
-    const anchorState = useSelector(state => state.anchor.anchorState);
+    const customSnack = useSelector(state => state.customSnack.customSnack);
+    
 
     const [inputState, setInputState] = useState("");
     const [snackState, setSnackState] = useState(false);
@@ -26,6 +28,7 @@ export const Contact = React.memo(() => {
             setSendData(resultOfValidation);
         }
         else {
+            if(customSnack) dispatch(updateStateCustomSnack);
             let mockArrayIndex = [1,2,3,4,5,6,7,8,9,10];
             setSendData(resultOfValidation);
             // в описании задания не нашёл API, c которым можно было бы работать и отправлять запрос, поэтому буду использовать jsonplaceholder
@@ -49,6 +52,7 @@ export const Contact = React.memo(() => {
                 }
             })
             .then(data => {
+                dispatch(updateStateCustomSnack());
                 setSnackState(true);
                 setInputState("");
                 console.log(data);
@@ -56,8 +60,6 @@ export const Contact = React.memo(() => {
             .catch(error => alert('Something went wrong...Try again'))
         }
     }
-
-    console.log(anchorState)
 
     const goToAllEvents = () => {
         dispatch(updateAnchorState());
