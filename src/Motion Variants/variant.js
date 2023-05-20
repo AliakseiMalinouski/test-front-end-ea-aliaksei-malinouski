@@ -132,3 +132,18 @@ export const contactVariant = {
         }
     },
 }
+
+export const allEventsTitleVariant = {
+    hidden: {
+        opacity: 0,
+        y: -70
+    },
+    visible: {
+        opacity: "39%",
+        y: 0,
+        transition: {
+            delay: 0.5,
+            duration: 0.7
+        }
+    },
+}

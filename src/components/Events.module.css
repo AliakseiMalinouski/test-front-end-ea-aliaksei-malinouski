@@ -15,4 +15,95 @@
 .EventsContent {
     width: 1708px;
     height: 682px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.StaticEvent {
+    width: 85px;
+    height: 682px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 7px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.StaticEvent h3 {
+    width: 560px;
+    color: white;
+    height: 85px;
+    transform: rotate(270deg);
+    position: relative;
+    top: 50%;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -40px;
+}
+
+.StaticEvent p {
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+.RedLine{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: red;
+}
+
+.OpenEvent {
+    width: 995px;
+    height: 682px;
+    position: relative;
+    z-index: 10;
+}
+
+.SmallOpenEvent {
+    width: 85px;
+    height: 682px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 7px;
+    position: relative;
+    background-image: url(https://i.ibb.co/vXvqvvH/Rectangle-35-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.SmallOpenEvent H3 {
+    width: 560px;
+    color: white;
+    height: 85px;
+    transform: rotate(270deg);
+    position: relative;
+    top: 50%;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -40px;
+}
+
+.SmallOpenEvent p {
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
 }

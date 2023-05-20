@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { updateStateCustomSnack } from "../Redux/customSnackSlice";
 
+
 function Home () {
 
     let dispatch = useDispatch();

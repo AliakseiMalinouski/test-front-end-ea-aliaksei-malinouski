@@ -5,7 +5,6 @@ import {Provider} from 'react-redux';
 import { store } from './Redux/store';
 import { PageRouter } from './Router/PageRouter';
 import { CornerVector } from './components/CornerVector';
-import { Contact } from './components/Contact';
 
 function App() {
 
