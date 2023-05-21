@@ -30,3 +30,9 @@
         width: 302px;
     }
 }
+
+@media all and (max-width: 668px) {
+    .Hero {
+        width: 320px;
+    }
+}

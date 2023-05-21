@@ -12,3 +12,9 @@
         width: 100%;
     }
 }
+
+@media all and (max-width: 668px) {
+    .Time {
+        width: 100%;
+    }
+}
