@@ -1,6 +1,8 @@
 import React from "react";
 import styles from './Events.module.css';
 import {customEventLoop} from '../event';
+import { motion } from "framer-motion";
+import { openEventVariant } from "../Motion Variants/variant";
 
 export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize}) => {
 
@@ -19,7 +21,9 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                     <p>0{id}</p>
                      <div className={styles.RedLine}></div>
                 </div>
-                <div className={styles.OpenEvent} style={{background: `url(${blur}) left 40% no-repeat, url(${image}) right no-repeat`}}>
+                <motion.div className={styles.OpenEvent} style={{background: `url(${blur}) left 40% no-repeat, url(${image}) right no-repeat`}}
+                variants={openEventVariant} initial={'hidden'} animate={'visible'}
+                >
                     <img src="https://i.ibb.co/3kcLmBR/01.png" alt="Number"/>
                     {
                         id !== 1
@@ -31,7 +35,7 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         null
                     }
                     <div className={styles.RedLine}></div>
-                </div>
+                </motion.div>
                 </>
                 :
                 <div className={styles.StaticEvent}

@@ -147,3 +147,16 @@ export const allEventsTitleVariant = {
         }
     },
 }
+
+export const openEventVariant = {
+    hidden: {
+        x: 400,
+    },
+    visible: {
+        x: 0,
+        transition: {
+            delay: 0.1,
+            duration: 0.7
+        }
+    },
+}
