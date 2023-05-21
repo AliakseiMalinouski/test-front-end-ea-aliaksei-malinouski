@@ -72,25 +72,27 @@ export const Contact = React.memo(() => {
                 <span>Other Events</span>
                 <img src="https://i.ibb.co/QDYTNjM/fi-arrow-down.png" alt="Down arrow"/>
             </p>
-            <form action="#" className={styles.Form}>
-                <input type="text" placeholder="Enter your Email and get notified"
-                className={styles.Input}
-                value={inputState}
-                onChange={(eo) => setInputState(eo.target.value)}
-                maxLength={40}
-                required={true}
-                />
-                <button type="submit" className={styles.Button} onClick={handleSubmit}>
-                    <img src="https://i.ibb.co/2tjGkwx/Frame-2317.png" alt="Right Arrow"/>
-                </button>
-            </form>
-            {
-                sendData.state 
-                ?
-                <ErrorHint key={sendData.type} text={sendData.text} example={sendData.example} status={sendData.status} invalid={sendData.illigal}/>
-                :
-                null
-            }
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                <form action="#" className={styles.Form}>
+                    <input type="text" placeholder="Enter your Email and get notified"
+                    className={styles.Input}
+                    value={inputState}
+                    onChange={(eo) => setInputState(eo.target.value)}
+                    maxLength={40}
+                    required={true}
+                    />
+                    <button type="submit" className={styles.Button} onClick={handleSubmit}>
+                        <img src="https://i.ibb.co/2tjGkwx/Frame-2317.png" alt="Right Arrow"/>
+                    </button>
+                </form>
+                {
+                    sendData.state 
+                    ?
+                    <ErrorHint key={sendData.type} text={sendData.text} example={sendData.example} status={sendData.status} invalid={sendData.illigal}/>
+                    :
+                    null
+                }
+            </div>
             </div>
         <Snack isOpen={snackState} onClose={() => setSnackState(false)} email={sendData.value && sendData.value}/>
         </motion.div>

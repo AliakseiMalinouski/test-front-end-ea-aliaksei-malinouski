@@ -76,10 +76,12 @@
         display: flex;
         justify-content: center;
     }
+
+    
     
     .WrapperFormContact {
         align-items: flex-start;
-        padding-top: 50px;
+        padding-top: 20px;
     }
 
     .Form {
@@ -97,6 +99,10 @@
         height: 33px;
     }
 
+    .Input {
+        padding: 16px 80px 16px 27px;
+    }
+
     .Input::placeholder {
         font-size: 14px;
     }
@@ -110,5 +116,9 @@
 
     .Button {
         margin-left: -40px;
+    }
+
+    .Input {
+        padding: 16px 50px 16px 27px;
     }
 }
