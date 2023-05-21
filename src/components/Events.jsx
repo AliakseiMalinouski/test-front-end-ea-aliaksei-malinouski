@@ -42,7 +42,7 @@ function Events () {
 
     const openEventParent = (id) => setActiveEvent(id);
 
-    let allEventsMemoizeed = useMemo(() => allEvents && allEvents?.map(({id, title, image, blur, button, date, number, back, lblur, bline, uline}) => <Event
+    let allEventsMemoizeed = useMemo(() => allEvents && allEvents?.map(({id, title, image, blur, button, date, number, back, lblur, bline, uline, mimage, mlblur, mback, mblue, mdark, mblur}) => <Event
     key={id}
     id={id}
     title={title}
@@ -57,6 +57,12 @@ function Events () {
     uline={uline}
     activeEvent={activeEvent}
     windowSize={windowSize}
+    mimage={mimage}
+    mlblur={mlblur}
+    mback={mback}
+    mblue={mblue}
+    mdark={mdark}
+    mblur={mblur}
     />), [allEvents, activeEvent, windowSize]);
 
     return (
