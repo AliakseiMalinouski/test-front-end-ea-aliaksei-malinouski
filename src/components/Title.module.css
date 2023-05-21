@@ -5,3 +5,11 @@
     opacity: 39%;
     text-transform: uppercase;
 }
+
+@media all and (max-width: 838px) {
+    .MainTitle {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 37.44px;
+    }
+}

@@ -12,7 +12,6 @@ import { linkVariant } from "../Motion Variants/variant";
 export const Hero = React.memo(() => {
     return (
         <div className={styles.Hero}>
-            <Logo mainText="Lead" underText="Advisors" srcLogo="https://i.ibb.co/Wtgfz8K/Group.png"/>
             <Title text="Under Construction" typeOfStyles={mainTitleStyles}/>
             <motion.p className={styles.Description}
             variants={paragraphVariant}

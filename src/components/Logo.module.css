@@ -9,6 +9,7 @@
     justify-content: space-evenly;
     padding-bottom: 92px;
     cursor: pointer;
+    margin: 0 auto;
 }
 .Logo p {
     display: flex;

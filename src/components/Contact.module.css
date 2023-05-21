@@ -18,6 +18,14 @@
     flex-grow: 2;
 }
 
+.WrapperFormContact {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+
 .Button {
     width: 43px;
     height: 43px;
@@ -57,4 +65,40 @@
 .Anchor:hover {
     transition: 0.8s;
     color: red;
+}
+
+@media all and (max-width: 1000px) {
+    .Anchor  {
+        width: 100%;
+        right: 0px;
+        bottom: 25px;
+        font-size: 16px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .WrapperFormContact {
+        align-items: flex-start;
+        padding-top: 50px;
+    }
+
+    .Form {
+        width: 360px;
+        height: 41px;
+    }
+
+    .Button {
+        width: 33px;
+        height: 33px;
+    }
+
+    .Button img{
+        width: 33px;
+        height: 33px;
+    }
+
+    .Input::placeholder {
+        font-size: 14px;
+    }
 }

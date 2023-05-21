@@ -67,7 +67,7 @@ export const Contact = React.memo(() => {
     
     return (
         <motion.div className="ContactWrapper" variants={contactVariant} initial={'hidden'} animate={'visible'}>
-        <div style={{display: 'flex', justifyContent: 'center', height: '100%', alignItems: 'center', position: 'relative'}}>
+        <div className={styles.WrapperFormContact}>
             <p className={styles.Anchor} onClick={goToAllEvents}>
                 <span>Other Events</span>
                 <img src="https://i.ibb.co/QDYTNjM/fi-arrow-down.png" alt="Down arrow"/>
