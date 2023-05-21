@@ -10,10 +10,6 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
         customEventLoop.emit('openEvent', id);
     }
 
-    // style={{
-    //     background: `url(${mimage}) top/100% 70% no-repeat, url(${mblur}) bottom/100% 30% no-repeat`
-    // }}
-
     if(windowSize) {
         return (
             <>
@@ -49,7 +45,7 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         >
                         <h4>{title}</h4>
                         <p>{date}</p>
-                        <a href="/">{button}</a>
+                        <a href="/">{button} <span className={styles.LinkWhiteLine}></span></a>
                         </div>
                         </motion.div>
                         <div className={styles.SmallOpenEventMedium} style={{
