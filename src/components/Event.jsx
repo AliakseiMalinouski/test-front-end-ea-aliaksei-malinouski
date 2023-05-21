@@ -3,6 +3,8 @@ import styles from './Events.module.css';
 import {customEventLoop} from '../event';
 import { motion } from "framer-motion";
 import { openEventVariant, openEventMediumVariant, openEventMiniVariant } from "../Motion Variants/variant";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize, mimage, mlblur, mback, mblue, mdark, mblur,  slblur, sback, sblue, sdark, sblur, small, simage}) => {
 
@@ -10,6 +12,7 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
         customEventLoop.emit('openEvent', id);
     }
 
+    let navigate = useNavigate();
 
     if(windowSize) {
         return (
@@ -104,7 +107,12 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         >
                         <h4>{title}</h4>
                         <p>{date}</p>
-                        <a href="/">{button} <span style={{width: '3px', position: 'absolute', left: '0px', top: '0px', background: 'white', height: '100%'}}></span></a>
+                        <NavLink onClick={(eo) => {
+                            eo.preventDefault();
+                            const uri = "/details/" + title;
+                            navigate(uri)
+
+                        }}>{button} <span style={{width: '3px', position: 'absolute', left: '0px', top: '0px', background: 'white', height: '100%'}}></span></NavLink>
                         </div>
                         </motion.div>
                         <div className={styles.OpenEventMiniChild}
@@ -162,7 +170,14 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         <div className={styles.MbBlur}>
                             <h4>{title}</h4>
                             <p>{date}</p>
-                            <a href="/">{button}</a>
+                            <NavLink onClick={(eo) => {
+                            eo.preventDefault();
+                            const uri = "/details/" + title;
+                            navigate(uri)
+
+                        }}>
+                            {button}
+                            </NavLink>
                         </div>
                         <div className={styles.RedLine}></div>
                     </motion.div>
