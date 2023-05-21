@@ -19,6 +19,7 @@ function Events () {
 
     const [activeEvent, setActiveEvent] = useState(1);
     const [windowSize, setWindowSize] = useState(false);
+    const [small, setSmall] = useState(false);
 
     useEffect(() => {
         if(anchorState !== 0) scrollToNode(anchorNode.current);
@@ -40,9 +41,14 @@ function Events () {
         if(windowSize.matches) setWindowSize(true);
     }, []);
 
+    useEffect(() => {
+        let windowSize = window.matchMedia('(max-width: 688px)');
+        if(windowSize.matches) setSmall(true);
+    }, []);
+
     const openEventParent = (id) => setActiveEvent(id);
 
-    let allEventsMemoizeed = useMemo(() => allEvents && allEvents?.map(({id, title, image, blur, button, date, number, back, lblur, bline, uline, mimage, mlblur, mback, mblue, mdark, mblur}) => <Event
+    let allEventsMemoizeed = useMemo(() => allEvents && allEvents?.map(({id, title, image, blur, button, date, number, back, lblur, bline, uline, mimage, mlblur, mback, mblue, mdark, mblur, simage, slblur, sback, sblue, sdark, sblur}) => <Event
     key={id}
     id={id}
     title={title}
@@ -63,7 +69,14 @@ function Events () {
     mblue={mblue}
     mdark={mdark}
     mblur={mblur}
-    />), [allEvents, activeEvent, windowSize]);
+    simage={simage}
+    slblur={slblur}
+    sback={sback}
+    sblue={sblue}
+    sdark={sdark}
+    sblur={sblur}
+    small={small}
+    />), [allEvents, activeEvent, windowSize, small]);
 
     return (
         <div className={styles.Events} style={{justifyContent: activeEvent ? "normal" : 'space-between'}}>

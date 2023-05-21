@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './Hero.module.css';
-import { Logo } from "./Logo";
 import { Title } from "./Title";
 import mainTitleStyles from './Title.module.css';
 import { Time } from "./Time";

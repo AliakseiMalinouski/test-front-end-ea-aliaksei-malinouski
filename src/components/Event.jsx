@@ -2,18 +2,23 @@ import React from "react";
 import styles from './Events.module.css';
 import {customEventLoop} from '../event';
 import { motion } from "framer-motion";
-import { openEventVariant, openEventMediumVariant } from "../Motion Variants/variant";
+import { openEventVariant, openEventMediumVariant, openEventMiniVariant } from "../Motion Variants/variant";
 
-export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize, mimage, mlblur, mback, mblue, mdark, mblur}) => {
+export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize, mimage, mlblur, mback, mblue, mdark, mblur,  slblur, sback, sblue, sdark, sblur, small, simage}) => {
 
     const openEvent = () => {
         customEventLoop.emit('openEvent', id);
     }
 
+
     if(windowSize) {
         return (
             <>
                 {
+                    !small
+                    ?
+                    <>
+                    {
                     id === activeEvent
                     ?
                     <>
@@ -68,6 +73,63 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         <p>{title}</p>
                         <div className={styles.RedLineMedium}></div>
                     </div>
+                }
+                    </>
+                :
+                <>
+                {
+                    id === activeEvent
+                    ?
+                    <>
+                        <motion.div className={styles.OpenEventMini}
+                        style={{
+                            backgroundImage: `url(${simage})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                        variants={openEventMiniVariant}
+                        initial={'hidden'}
+                        animate={'visible'}
+                        >
+                        {
+                        id === 1
+                        ?
+                        null
+                        :
+                        <span style={{position: 'absolute', top: '10%', right: '100px', width: '50%', fontSize: '20px', color: 'white'}}>
+                        К сожалению, не нашёл в макете остальные картинки для карточки {id}
+                        </span>
+                        }
+                        <div className={styles.SBlur}
+                        >
+                        <h4>{title}</h4>
+                        <p>{date}</p>
+                        <a href="/">{button} <span style={{width: '3px', position: 'absolute', left: '0px', top: '0px', background: 'white', height: '100%'}}></span></a>
+                        </div>
+                        </motion.div>
+                        <div className={styles.OpenEventMiniChild}
+                        style={{
+                            backgroundImage: `url(${sblue})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center'
+                        }}
+                        >
+                        <h3>0{id}</h3>
+                        <p>{title}</p>
+                        </div>
+                    </>
+                    :
+                    <div className={styles.StaticMiniEvent}
+                        style={{
+                            background: `url(${slblur}) left no-repeat, url(${sdark}) center no-repeat, url(${sback}) right no-repeat`
+                        }}
+                        onClick={openEvent}
+                        >
+                        <h3>0{id}</h3>
+                        <p>{title}</p>
+                    </div>
+                }
+                </>
                 }
             </>
         )
