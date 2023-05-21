@@ -109,12 +109,56 @@
     font-weight: 500;
 }
 
+.MbBlur {
+    width: 100%;
+    height: 192px;
+    position: absolute;
+    bottom: 50px;
+    padding: 25px 479px 40px 40px;
+}
+
+.MbBlur h4 {
+    margin-bottom: 12px;
+    color: white;
+    font-weight: 600;
+    line-height: 21.6px;
+    font-size: 24px;
+}
+
+.MbBlur p {
+    margin-bottom: 29px;
+    line-height: 24px;
+    font-weight: 400px;
+    font-size: 16px;
+    color: white;
+}
+
+.MbBlur a {
+    display: block;
+    width: 256px;
+    height: 62px;
+    border: 1px solid white;
+    padding: 20px 56px 20px 56px;
+    color: white;
+    margin-top: 25px;
+}
+
+@media all and (max-width: 1710px) {
+    .EventsContent {
+        width: 688px;
+        height: 1172px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .StaticEventMedium {
     width: 688px;
     height: 85px;
     display: flex;
     align-items: center;
-    padding-left: 36px;
+    position: relative;
+    margin-bottom: 3px;
 }
 
 .StaticEventMedium h3 {
@@ -123,6 +167,7 @@
     font-weight: 500;
     color: white;
     margin-right: 32px;
+    margin-left: 36px;
 }
 
 .StaticEventMedium p {
@@ -132,9 +177,18 @@
     color: white;
 }
 
+.StaticEventMedium .RedLineMedium {
+    position: absolute;
+    width: 100%;
+    border: 1px solid red;
+    bottom: 0px;
+}
+
 .OpenEventMedium {
     width: 100%;
     height: 460px;
+    position: relative;
+    margin-bottom: 3px;
 }
 
 .SmallOpenEventMedium {
@@ -142,7 +196,9 @@
     height: 85px;
     display: flex;
     align-items: center;
-    padding-left: 36px;
+    position: relative;
+    z-index: 15;
+    margin-bottom: 3px;
 }
 
 .SmallOpenEventMedium h3 {
@@ -151,6 +207,7 @@
     font-weight: 500;
     color: white;
     margin-right: 32px;
+    margin-left: 36px;
 }
 
 .SmallOpenEventMedium p {
@@ -160,10 +217,38 @@
     color: white;
 }
 
-@media all and (max-width: 1710px) {
-    .EventsContent {
-        width: 688px;
-        display: flex;
-        flex-direction: column;
-    }
+.MbBlurMedium {
+    width: 100%;
+    height: 192px;
+    position: absolute;
+    bottom: 0px;
+    padding: 25px 479px 40px 40px;
+}
+
+.MbBlurMedium h4 {
+    margin-bottom: 8px;
+    color: white;
+    font-weight: 600;
+    line-height: 21.6px;
+    font-size: 18px;
+}
+
+.MbBlurMedium p {
+    margin-bottom: 29px;
+    line-height: 24px;
+    font-weight: 400px;
+    font-size: 16px;
+    color: white;
+}
+
+.MbBlurMedium a {
+    display: block;
+    width: 169px;
+    height: 44px;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    padding: 12px 66px 12px 24px;
 }

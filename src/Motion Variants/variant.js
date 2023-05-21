@@ -151,9 +151,26 @@ export const allEventsTitleVariant = {
 export const openEventVariant = {
     hidden: {
         x: 400,
+        opacity: 0,
     },
     visible: {
         x: 0,
+        opacity: 1,
+        transition: {
+            delay: 0.1,
+            duration: 0.7
+        }
+    },
+}
+
+export const openEventMediumVariant = {
+    hidden: {
+        opacity: 0,
+        y: 150,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
         transition: {
             delay: 0.1,
             duration: 0.7

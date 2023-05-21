@@ -2,13 +2,17 @@ import React from "react";
 import styles from './Events.module.css';
 import {customEventLoop} from '../event';
 import { motion } from "framer-motion";
-import { openEventVariant } from "../Motion Variants/variant";
+import { openEventVariant, openEventMediumVariant } from "../Motion Variants/variant";
 
 export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize, mimage, mlblur, mback, mblue, mdark, mblur}) => {
 
     const openEvent = () => {
         customEventLoop.emit('openEvent', id);
     }
+
+    // style={{
+    //     background: `url(${mimage}) top/100% 70% no-repeat, url(${mblur}) bottom/100% 30% no-repeat`
+    // }}
 
     if(windowSize) {
         return (
@@ -17,13 +21,37 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                     id === activeEvent
                     ?
                     <>
-                        <div className={styles.OpenEventMedium}
+                        <motion.div className={styles.OpenEventMedium}
+                        variants={openEventMediumVariant}
+                        initial={'hidden'}
+                        animate={'visible'}
                         style={{
-                            background: `url(${mimage}) top no-repeat, url(${mblur}) bottom no-repeat`
+                            backgroundImage: `url(${mimage})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
                         }}
                         >
-                            
+                        {
+                            id === 1
+                            ?
+                            null
+                            :
+                            <span style={{position: 'absolute', top: '20%', left: "30%", width: '50%', fontSize: '20px', color: 'white'}}>
+                                К сожалению, не нашёл в макете остальные картинки для карточки {id}
+                        </span>
+                        }
+                        <div className={styles.MbBlurMedium}
+                        style={{
+                            backgroundImage: `url(${mblur})`,
+                            backgroundPosition: 'bottom',
+                            backgroundRepeat: "no-repeat"
+                        }}
+                        >
+                        <h4>{title}</h4>
+                        <p>{date}</p>
+                        <a href="/">{button}</a>
                         </div>
+                        </motion.div>
                         <div className={styles.SmallOpenEventMedium} style={{
                             backgroundImage: `url(${mblue})`,
                             backgroundRepeat: 'no-repeat',
@@ -42,6 +70,7 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                     >
                         <h3>0{id}</h3>
                         <p>{title}</p>
+                        <div className={styles.RedLineMedium}></div>
                     </div>
                 }
             </>
@@ -72,6 +101,11 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                             :
                             null
                         }
+                        <div className={styles.MbBlur}>
+                            <h4>{title}</h4>
+                            <p>{date}</p>
+                            <a href="/">{button}</a>
+                        </div>
                         <div className={styles.RedLine}></div>
                     </motion.div>
                     </>
