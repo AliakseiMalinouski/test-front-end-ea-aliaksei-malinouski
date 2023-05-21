@@ -18,6 +18,7 @@ function Events () {
     const allEvents = useSelector(state => state.allEvents.allEvents);
 
     const [activeEvent, setActiveEvent] = useState(1);
+    const [windowSize, setWindowSize] = useState(false);
 
     useEffect(() => {
         if(anchorState !== 0) scrollToNode(anchorNode.current);
@@ -32,6 +33,11 @@ function Events () {
         return () => {
             customEventLoop.addListener('openEvent', openEventParent);
         }
+    }, []);
+
+    useEffect(() => {
+        let windowSize = window.matchMedia('(max-width: 1710px)');
+        if(windowSize.matches) setWindowSize(true);
     }, []);
 
     const openEventParent = (id) => setActiveEvent(id);
@@ -50,7 +56,8 @@ function Events () {
     bline={bline}
     uline={uline}
     activeEvent={activeEvent}
-    />), [allEvents,activeEvent]);
+    windowSize={windowSize}
+    />), [allEvents, activeEvent, windowSize]);
 
     return (
         <div className={styles.Events} style={{justifyContent: activeEvent ? "normal" : 'space-between'}}>

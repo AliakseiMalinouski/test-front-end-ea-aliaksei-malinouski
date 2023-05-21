@@ -2,7 +2,7 @@ import React from "react";
 import styles from './Events.module.css';
 import {customEventLoop} from '../event';
 
-export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent}) => {
+export const Event = React.memo(({id, title, image, blur, button, date, number, back, lblur, bline, uline, activeEvent, windowSize}) => {
 
     const openEvent = () => {
         customEventLoop.emit('openEvent', id);
@@ -30,6 +30,7 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         :
                         null
                     }
+                    <div className={styles.RedLine}></div>
                 </div>
                 </>
                 :
