@@ -8,14 +8,16 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
         customEventLoop.emit('openEvent', id);
     }
 
-
-    if(id === activeEvent) {
-        return (
-            <>
-                <div className={styles.SmallOpenEvent}>
-                    <h3>{title}</h3>
+    return (
+        <>
+            {
+                id === activeEvent
+                ?
+                <>
+                    <div className={styles.SmallOpenEvent}>
+                     <h3>{title}</h3>
                     <p>0{id}</p>
-                    <div className={styles.RedLine}></div>
+                     <div className={styles.RedLine}></div>
                 </div>
                 <div className={styles.OpenEvent} style={{background: `url(${blur}) left 40% no-repeat, url(${image}) right no-repeat`}}>
                     <img src="https://i.ibb.co/3kcLmBR/01.png" alt="Number"/>
@@ -29,21 +31,19 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         null
                     }
                 </div>
-            </>
-        )
-    }
-    else {
-        return (
-            <div className={styles.StaticEvent}
-            style={{
-                background: `url(${lblur}) top no-repeat, url(${back}) center no-repeat`
-            }}
-            onClick={openEvent}
-            >
-                <h3>{title}</h3>
-                <p>0{id}</p>
-                <div className={styles.RedLine}></div>
-            </div>
-        )
-    }
+                </>
+                :
+                <div className={styles.StaticEvent}
+                    style={{
+                        background: `url(${lblur}) top no-repeat, url(${back}) center no-repeat`
+                    }}
+                    onClick={openEvent}
+                    >
+                        <h3>{title}</h3>
+                        <p>0{id}</p>
+                        <div className={styles.RedLine}></div>
+                </div>
+            }
+        </>
+    )
 })
