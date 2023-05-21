@@ -53,8 +53,14 @@ export const Event = React.memo(({id, title, image, blur, button, date, number, 
                         >
                         <h4>{title}</h4>
                         <p>{date}</p>
-                        <a href="/">{button} <span className={styles.LinkWhiteLine}></span></a>
                         </div>
+                        <NavLink onClick={(eo) => {
+                            eo.preventDefault();
+                            const uri = "/details/" + title;
+                            navigate(uri)
+                        }}>
+                            {button}<span className={styles.LinkWhiteLine}></span>
+                            </NavLink>
                         </motion.div>
                         <div className={styles.SmallOpenEventMedium} style={{
                             backgroundImage: `url(${mblue})`,
