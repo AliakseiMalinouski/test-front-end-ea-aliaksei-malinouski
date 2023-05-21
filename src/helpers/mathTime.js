@@ -37,18 +37,18 @@ export const mathTime = () => {
 
     
 
-    return {
-        day: {
-            id: 1, title: "Days", rest: currentDate, image: "https://i.ibb.co/tmFcw6Z/Group-2096.png"
+    return [
+        {
+            id: 1, title: "Days", rest: currentDate, image: "https://i.ibb.co/tmFcw6Z/Group-2096.png", icon: "https://i.ibb.co/9NvsnwZ/Group-2096-1.png"
         },
-        hour: {
-            id: 2, title: "Hours", rest: currentHours, image: "https://i.ibb.co/TbzRkQ4/Group-2094.png"
+        {
+            id: 2, title: "Hours", rest: currentHours, image: "https://i.ibb.co/TbzRkQ4/Group-2094.png", icon: "https://i.ibb.co/xHm5wbQ/Group-2111.png"
         },
-        minute: {
-            id: 3, title: 'Minutes', rest: currentMinutes, image: "https://i.ibb.co/m4GfPdT/Group-2092.png"
+        {
+            id: 3, title: 'Minutes', rest: currentMinutes, image: "https://i.ibb.co/m4GfPdT/Group-2092.png", icon: "https://i.ibb.co/K0QHG6q/Group-2112.png"
         },
-        second: {
-            id: 4, title: "Seconds", rest: currentSeconds, image: "https://i.ibb.co/6HhhFPb/Group-2090.png"
+        {
+            id: 4, title: "Seconds", rest: currentSeconds, image: "https://i.ibb.co/6HhhFPb/Group-2090.png", icon: "https://i.ibb.co/3TJcJst/Group-2110.png"
         }
-    };
+    ];
 }

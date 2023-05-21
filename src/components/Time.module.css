@@ -6,3 +6,9 @@
     margin: 0 auto;
     margin-top: 32px;
 }
+
+@media all and (max-width: 838px) {
+    .Time {
+        width: 100%;
+    }
+}

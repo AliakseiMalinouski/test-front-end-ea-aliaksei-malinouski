@@ -150,3 +150,9 @@ li {
     opacity: 0.8;
     transition: 0.5s;
 }
+
+@media all and (max-width: 838px) {
+    .Divider {
+        margin-top: 0px;
+    }
+}
