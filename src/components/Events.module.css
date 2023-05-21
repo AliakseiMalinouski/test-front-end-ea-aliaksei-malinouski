@@ -262,3 +262,12 @@
     width: 5px;
     background-color: white;
 }
+
+
+@media all and (max-width: 838px) {
+    .EventsTitle {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 37.44px;
+    }
+}
