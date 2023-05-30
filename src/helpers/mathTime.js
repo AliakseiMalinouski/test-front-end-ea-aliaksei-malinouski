@@ -7,7 +7,7 @@ export const mathTime = () => {
     let staticFullMinutesHoursSeconds = 60;
 
     let currentMinutes = transformUnitsOfTime(date.getMinutes(), 'minutes');
-    let currentDate = `${staticFullDay - date.getDate()}`;
+    let currentDate = transformUnitsOfTime(date.getDate(), 'days');
     let currentHours = transformUnitsOfTime(date.getHours(), 'hours');
     let currentSeconds = transformUnitsOfTime(date.getSeconds(), 'seconds');
     
